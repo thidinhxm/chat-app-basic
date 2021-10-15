@@ -3,12 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/drawable/background_content_bottom.xml" value="0.2" />
         <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/drawable/background_icon.xml" value="0.1" />
         <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/drawable/background_image.xml" value="0.11481481481481481" />
         <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/drawable/background_input.xml" value="0.13148148148148148" />
+        <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/drawable/ic_add.xml" value="0.1" />
         <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
         <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/layout/activity_users.xml" value="0.1" />
+        <entry key="..\:/program/android-studio/ChatApp/app/src/main/res/layout/item_container_user.xml" value="0.1" />
       </map>
     </option>
   </component>
