@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "479770784255",
+    "project_id": "chatapp-71f90",
+    "storage_bucket": "chatapp-71f90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479770784255:android:5c003ee833771f79b4f7ca",
+        "android_client_info": {
+          "package_name": "hcmus.thidinh.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479770784255-k22j0gu9eo4tfnfc4ioumappgpqanq9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwx76fP_MTKY3rbGy7DCLKmiZ06icwQ4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479770784255-k22j0gu9eo4tfnfc4ioumappgpqanq9j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
