@@ -2,6 +2,7 @@ package hcmus.thidinh.chatapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,11 +14,12 @@ import java.util.List;
 
 import hcmus.thidinh.chatapp.adapters.UsersApdapter;
 import hcmus.thidinh.chatapp.databinding.ActivityUsersBinding;
+import hcmus.thidinh.chatapp.listeners.UserListener;
 import hcmus.thidinh.chatapp.models.User;
 import hcmus.thidinh.chatapp.utilities.Constants;
 import hcmus.thidinh.chatapp.utilities.PreferenceManager;
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity extends AppCompatActivity implements UserListener {
 
     private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
@@ -56,7 +58,7 @@ public class UsersActivity extends AppCompatActivity {
                             users.add(user);
                         }
                         if (users.size() > 0) {
-                            UsersApdapter usersApdapter = new UsersApdapter(users);
+                            UsersApdapter usersApdapter = new UsersApdapter(users, this);
                             binding.usersRecyclerView.setAdapter(usersApdapter);
                             binding.usersRecyclerView.setVisibility(View.VISIBLE);
                         } else {
@@ -79,5 +81,13 @@ public class UsersActivity extends AppCompatActivity {
         } else {
             binding.progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    @Override
+    public void onUserClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
+        finish();
     }
 }

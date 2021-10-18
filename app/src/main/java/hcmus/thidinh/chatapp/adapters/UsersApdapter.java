@@ -12,15 +12,18 @@ import java.util.Base64;
 import java.util.List;
 
 import hcmus.thidinh.chatapp.databinding.ItemContainerUserBinding;
+import hcmus.thidinh.chatapp.listeners.UserListener;
 import hcmus.thidinh.chatapp.models.User;
 
 public class UsersApdapter  extends RecyclerView.Adapter<UsersApdapter.UserViewHolder>{
 
     private final List<User> users;
-
-    public UsersApdapter(List<User> users) {
+    private final UserListener userListener;
+    public UsersApdapter(List<User> users, UserListener userListener) {
         this.users = users;
+        this.userListener = userListener;
     }
+
 
     @NonNull
     @Override
@@ -57,6 +60,7 @@ public class UsersApdapter  extends RecyclerView.Adapter<UsersApdapter.UserViewH
             binding.textName.setText(user.name);
             binding.textEmail.setText(user.email);
             binding.imageProfile.setImageBitmap(getUserImage(user.image));
+            binding.getRoot().setOnClickListener(view -> userListener.onUserClicked(user));
         }
 
     }
