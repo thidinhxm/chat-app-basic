@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListeners() {
         binding.imageSignOut.setOnClickListener(view -> signOut());
+        binding.fabNewChat.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), UsersActivity.class)));
     }
     private void loadUserDetails() {
         binding.textName.setText(preferenceManager.getString(Constants.KEY_NAME));
@@ -61,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                         preferenceManager.getString(Constants.KEY_USER_ID)
                 );
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
-                .addOnSuccessListener(unused -> showToast("token update successfully"))
                 .addOnFailureListener(e -> showToast("Unable to update token"));
     }
 

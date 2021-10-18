@@ -2,7 +2,6 @@ package hcmus.thidinh.chatapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.Preference;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
@@ -12,11 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.regex.Pattern;
-
-import hcmus.thidinh.chatapp.R;
-import hcmus.thidinh.chatapp.databinding.ActivityMainBinding;
 import hcmus.thidinh.chatapp.databinding.ActivitySignInBinding;
 import hcmus.thidinh.chatapp.utilities.Constants;
 import hcmus.thidinh.chatapp.utilities.PreferenceManager;
@@ -59,7 +53,7 @@ public class SignInActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful() && task.getResult() != null
                             && task.getResult().getDocuments().size() > 0) {
-                        DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+                        DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0); // để coi lại
                         preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                         preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
                         preferenceManager.putString(Constants.KEY_NAME, documentSnapshot.getString(Constants.KEY_NAME));
